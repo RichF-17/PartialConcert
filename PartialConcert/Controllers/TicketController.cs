@@ -54,7 +54,6 @@ namespace PartialConcert.Controllers
                 TempData["Name"] = ticket.Name;
                 TempData["Document"] = ticket.Document;
                 TempData["Date"] = ticket.DateTime;
-                //TODO : time and entrance
                 return RedirectToAction(nameof(CheckTicket), new { Id = ticket.Id });
             }
             else
@@ -112,7 +111,7 @@ namespace PartialConcert.Controllers
                     Ticket ticket = await _context.Tickets.FindAsync(model.Id);
                     ticket.Document = model.Document;
                     ticket.Name = model.Name;
-                    ticket.DateTime = model.DateTime;
+                    ticket.DateTime = DateTime.Now;
                     ticket.WasUsed = true;
                     ticket.Entrance = await _context.Entrances.FindAsync(model.EntranceId);
                     _context.Update(ticket);

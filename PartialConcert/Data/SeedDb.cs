@@ -23,7 +23,7 @@ namespace PartialConcert.Data
         {
             if (!_context.Tickets.Any())
             {
-                for (int i = 1; i <= 5000; i++)
+                for (int i = 0; i <= 5000; i++)
                 {
                     _context.Tickets.Add(new Ticket
                     {
