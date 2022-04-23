@@ -2,8 +2,8 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="row">
-    <div class="col-md-4 offset-4">
+<div class=justify-content-center "row">
+    <div class="col-md-4 offset-4 shadow border border-5 border-dark">
         <h3>Validar ticket</h3>
         <form asp-action="CheckTicket">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,16 +31,16 @@
             {
                 <p>
                     <h4>Datos del ticket:</h4>
-                    <br />
+                   
                     Nombre: <span class="text-dark"> @Html.Encode(TempData["Name"])</span>
                 </p>
             }
-            <br />
+         
             @if (TempData["Document"] != null)
             {
                 <p>Documento: <span class="text-dark"> @Html.Encode(TempData["Document"])</span></p>
             }
-            <br />
+          
             @if (TempData["Date"] != null)
             {
                 <p>Fecha: <span class="text-dark"> @Html.Encode(TempData["Date"])</span></p>
